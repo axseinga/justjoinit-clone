@@ -1,12 +1,11 @@
 "use client";
 
 import React from "react";
-import { Box, List, ListItem, Button } from "@mui/material";
-import Image from "next/image";
+import { Box, List, ListItem } from "@mui/material";
 import Link from "next/link";
 import MenuIcon from "@mui/icons-material/Menu";
-import { NavSignInDropdown } from "@/components/nav/nav-sign-in-dropdown";
-import { NavLangDropdown } from "@/components/nav/nav-lang-dropdown";
+import { NavSignInDropdown } from "@/components/nav/nav-sign-in-dropdown/nav-sign-in-dropdown";
+import { NavLangDropdown } from "@/components/nav/nav-lang-dropdown/nav-lang-dropdown";
 import { navLinks } from "@/components/nav/content";
 import {
   NavTitle,
@@ -15,26 +14,23 @@ import {
   NavPostAJobButton,
   NavMenuToggle,
   NavBoxCenter,
-  NavSavedIcon,
 } from "@/components/nav/nav.styles";
 import { NavThemeSwitch } from "./nav-theme-switch";
 import { Theme, useTheme } from "@mui/material/styles";
+import { NavSavedSearches } from "./nav-saved-searches/nav-saved-searches";
+import { Logo } from "@/components/logo";
 
 export const Nav = () => {
   const theme: Theme = useTheme();
   const [isSignInDropdownOpen, setIsSignInDropdownOpen] = React.useState(false);
   const [isLangDropdownOpen, setIsLangDropdownOpen] = React.useState(false);
+  const [isSavedSearchesOpen, setIsSavedSearchesOpen] = React.useState(false);
 
   return (
     <NavPaper component="header" elevation={1}>
       <Box sx={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
         <Box sx={{ position: "relative", width: 119, height: 24 }}>
-          <Image
-            src="/assets/logos/logo.svg"
-            alt="logo"
-            fill
-            objectFit="contain"
-          />
+          <Logo color={theme.palette.logo}/>
         </Box>
         <NavTitle>#1 Job Board for tech industry in Europe</NavTitle>
         <NavThemeSwitch />
@@ -80,22 +76,10 @@ export const Nav = () => {
             setOpen={setIsSignInDropdownOpen}
           />
           <Box sx={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-            <Button
-              aria-label="Saved searches"
-              sx={{
-                padding: 0,
-                minWidth: "40px",
-                "&:hover": {
-                  backgroundColor: "transparent",
-                },
-              }}
-            >
-              <NavSavedIcon
-                aria-hidden="true"
-                fontSize="large"
-                color="inherit"
-              />
-            </Button>
+            <NavSavedSearches
+              open={isSavedSearchesOpen}
+              setOpen={setIsSavedSearchesOpen}
+            />
             <NavLangDropdown
               open={isLangDropdownOpen}
               setOpen={setIsLangDropdownOpen}

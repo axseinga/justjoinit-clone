@@ -5,7 +5,7 @@ import { ClickAwayListener } from "@mui/base/ClickAwayListener";
 import { Popper, Button, Fade, SxProps } from "@mui/material";
 
 type PopperWrapperProps = {
-  buttonStyle: SxProps;
+  buttonStyle?: SxProps;
   buttonIcon?: React.ReactNode;
   buttonLabel: string | React.ReactNode;
   popperPlacement:
@@ -18,6 +18,7 @@ type PopperWrapperProps = {
   children: React.ReactElement<{ setOpen: (open: boolean) => void }>;
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  buttonAriaLabel?: string;
 };
 
 export const PopperWrapper = ({
@@ -28,6 +29,7 @@ export const PopperWrapper = ({
   children,
   open,
   setOpen,
+  buttonAriaLabel,
 }: PopperWrapperProps) => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
@@ -56,6 +58,7 @@ export const PopperWrapper = ({
           disableElevation
           sx={buttonStyle}
           endIcon={buttonIcon ? buttonIcon : null}
+          aria-label={buttonAriaLabel && buttonAriaLabel}
         >
           {buttonLabel}
         </Button>

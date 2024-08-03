@@ -2,12 +2,7 @@
 
 import * as React from "react";
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
-import {
-  Typography,
-  ListItem,
-  ListItemText,
-  Divider,
-} from "@mui/material";
+import { Typography, ListItem, ListItemText, Divider } from "@mui/material";
 import { signInDropdownList } from "@/components/nav/content";
 import { PopperWrapper } from "@/components/popper-wrapper/popper-wrapper";
 import {
@@ -17,7 +12,7 @@ import {
   NavSignInDropdownListItemHeaderIcon,
   NavSignInDropdownListItemLinks,
   NavSignInDropdownWrapper,
-} from "@/components/nav/nav.styles";
+} from "@/components/nav/nav-sign-in-dropdown/nav-sign-in-dropdown.styles";
 import { Theme, useTheme } from "@mui/material/styles";
 
 type NavSignInDropdownProps = {

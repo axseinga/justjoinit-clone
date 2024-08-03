@@ -6,9 +6,9 @@ import {
   NavLangDropdownCurrencyList,
   NavLangDropdownCurrencyListButton,
   NavLangDropdownWrapper,
-  NavTitle,
-} from "./nav.styles";
-import { currenciesLists } from "./content";
+} from "@/components/nav/nav-lang-dropdown/nav-lang-dropdown.styles";
+import { NavTitle } from "@/components/nav/nav.styles";
+import { currenciesLists } from "@/components/nav/content";
 import { PopperWrapper } from "@/components/popper-wrapper/popper-wrapper";
 import { Theme, useTheme } from "@mui/material/styles";
 
@@ -25,14 +25,14 @@ type NavLangDropdownProps = {
 export const NavLangDropdown = ({ setOpen, open }: NavLangDropdownProps) => {
   const theme: Theme = useTheme();
 
-  const [currency, setCurrency] = React.useState<CurrencyT>({
+  const [selectedCurrency, setSelectedCurrency] = React.useState<CurrencyT>({
     label: "PLN",
     value: "pln",
   });
 
   const handleCurrencySelect = (selectedCurrency: CurrencyT) => {
     setOpen(false);
-    setCurrency(selectedCurrency);
+    setSelectedCurrency(selectedCurrency);
   };
 
   return (
@@ -56,7 +56,7 @@ export const NavLangDropdown = ({ setOpen, open }: NavLangDropdownProps) => {
           component="p"
           sx={{ fontSize: "11px", fontWeight: "600" }}
         >
-          {currency.label}
+          {selectedCurrency.label}
         </NavTitle>
       }
       popperPlacement="bottom"
@@ -71,7 +71,7 @@ export const NavLangDropdown = ({ setOpen, open }: NavLangDropdownProps) => {
         >
           <Typography
             variant="h6"
-            component="h3"
+            component="h2"
             color={theme.palette.text.secondary}
             paddingX="12px"
           >
@@ -84,7 +84,10 @@ export const NavLangDropdown = ({ setOpen, open }: NavLangDropdownProps) => {
                 onClick={() => handleCurrencySelect(currency)}
               >
                 <ListItem sx={{ padding: 0 }}>
-                  <Typography variant="body1" color={theme.palette.text.primary}>
+                  <Typography
+                    variant="body1"
+                    color={currency.value === selectedCurrency.value ? "#FF4081" : theme.palette.text.primary}
+                  >
                     {currency.label}
                   </Typography>
                 </ListItem>

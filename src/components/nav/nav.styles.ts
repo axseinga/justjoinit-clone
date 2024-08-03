@@ -11,12 +11,9 @@ import {
   ButtonProps,
   Box,
   BoxProps,
-  List,
-  ListProps,
   Switch,
   SwitchProps,
 } from "@mui/material";
-import StarOutlineRoundedIcon from "@mui/icons-material/StarOutlineRounded";
 
 export const NavPaper = styled(Paper)<PaperProps>(({ theme }) => ({
   width: "100cqw",
@@ -27,18 +24,6 @@ export const NavPaper = styled(Paper)<PaperProps>(({ theme }) => ({
   justifyContent: "space-between",
   color: theme.palette.text.primary,
   backgroundColor: theme.palette.primary.main,
-}));
-
-export const ListLink = styled(Typography)<TypographyProps>(() => ({
-  backgroundColor: "transparent",
-  "& .MuiTypography": {
-    "&:hover, &.Mui-focusVisible": {
-      backgroundColor: "#f3f6f8",
-    },
-    "&.Mui-active": {
-      backgroundColor: "#f3f6f8",
-    },
-  },
 }));
 
 export const NavTitle = styled(Typography)<TypographyProps>(() => ({
@@ -85,102 +70,6 @@ export const NavBoxCenter = styled(Box)<BoxProps>(() => ({
   display: "flex",
   alignItems: "center",
   gap: "1rem",
-}));
-
-export const NavSavedIcon = styled(StarOutlineRoundedIcon)(({ theme }) => ({
-  width: "50px",
-  height: "50px",
-  color: theme.palette.text.secondary,
-  borderRadius: "50%",
-  padding: "8px",
-  "&:hover": {
-    backgroundColor: theme.palette.buttonHover,
-  },
-}));
-
-export const NavSignInDropdownWrapper = styled(Box)<BoxProps>(({ theme }) => ({
-  border: "1px solid rgb(243, 246, 248)",
-  backgroundColor: theme.palette.primary.main,
-  borderRadius: "20px",
-  padding: "24px",
-  marginTop: "4px",
-  gap: "12px",
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "flex-start",
-  color: theme.palette.text.primary,
-  boxShadow:
-    "rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px",
-}));
-
-export const NavSignInDropdownContent = styled(Box)<BoxProps>(() => ({
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "flex-start",
-  gap: "1rem",
-}));
-
-export const NavSignInDropdownListItem = styled(Box)<BoxProps>(() => ({
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "flex-start",
-  gap: "1rem",
-}));
-
-export const NavSignInDropdownListItemHeader = styled(Box)<BoxProps>(() => ({
-  display: "flex",
-  alignItems: "center",
-  gap: "0.5rem",
-}));
-
-export const NavSignInDropdownListItemHeaderIcon = styled(Box)<BoxProps>(
-  ({ theme }) => ({
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: theme.palette.primary.dark,
-    padding: "0.5rem",
-    borderRadius: "10px",
-  })
-);
-
-export const NavSignInDropdownListItemLinks = styled(List)<ListProps>(() => ({
-  display: "flex",
-  flexDirection: "column",
-  marginLeft: "0.5rem",
-}));
-
-export const NavLangDropdownWrapper = styled(Box)<BoxProps>(({ theme }) => ({
-  border: "1px solid rgb(243, 246, 248)",
-  backgroundColor: theme.palette.primary.main,
-  borderRadius: "20px",
-  padding: "24px 8px 5px 8px",
-  marginTop: "4px",
-  gap: "12px",
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "flex-start",
-  color: theme.palette.text.primary,
-  boxShadow:
-    "rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px",
-}));
-
-export const NavLangDropdownCurrencyList = styled(List)<ListProps>(() => ({
-  width: "100%",
-  display: "flex",
-  flexDirection: "column",
-  gap: "2px",
-}));
-
-export const NavLangDropdownCurrencyListButton = styled(Box)<BoxProps>(({theme}) => ({
-  width: "100%",
-  borderRadius: "13px",
-  padding: "8px 14px",
-  display: "flex",
-  cursor: "pointer",
-  "&:hover": {
-    backgroundColor: theme.palette.buttonHoverPink,
-  },
 }));
 
 export const NavThemeSwitchButton = styled(Switch)<SwitchProps>(() => ({
