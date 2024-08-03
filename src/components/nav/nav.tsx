@@ -4,8 +4,8 @@ import React from "react";
 import { Box, List, ListItem } from "@mui/material";
 import Link from "next/link";
 import MenuIcon from "@mui/icons-material/Menu";
+import { NavCurrencyDropdown } from "./nav-currency-dropdown/nav-currency-dropdown";
 import { NavSignInDropdown } from "@/components/nav/nav-sign-in-dropdown/nav-sign-in-dropdown";
-import { NavLangDropdown } from "@/components/nav/nav-lang-dropdown/nav-lang-dropdown";
 import { navLinks } from "@/components/nav/content";
 import {
   NavTitle,
@@ -30,14 +30,26 @@ export const Nav = () => {
     <NavPaper component="header" elevation={1}>
       <Box sx={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
         <Box sx={{ position: "relative", width: 119, height: 24 }}>
-          <Logo/>
+          <Logo />
         </Box>
-        <NavTitle>#1 Job Board for tech industry in Europe</NavTitle>
-        <NavThemeSwitch />
+        <NavTitle
+          sx={{
+            display: { xs: "none", sm: "none", md: "none", lg: "flex" },
+          }}
+        >
+          #1 Job Board for tech industry in Europe
+        </NavTitle>
+        <NavThemeSwitch/>
       </Box>
       <NavBoxCenter>
         <NavBoxCenter>
-          <List sx={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+          <List
+            sx={{
+              display: { xs: "none", sm: "none", md: "none", lg: "flex" },
+              alignItems: "center",
+              gap: "1rem",
+            }}
+          >
             {navLinks.map(({ href, label }, index) => (
               <ListItem
                 key={`${index}_${label}`}
@@ -62,10 +74,7 @@ export const Nav = () => {
               </ListItem>
             ))}
           </List>
-          <NavPostAJobButton
-            href="/pricing"
-            component={Link}
-          >
+          <NavPostAJobButton href="/pricing" component={Link}>
             Post a job
           </NavPostAJobButton>
           <NavSignInDropdown
@@ -77,7 +86,7 @@ export const Nav = () => {
               open={isSavedSearchesOpen}
               setOpen={setIsSavedSearchesOpen}
             />
-            <NavLangDropdown
+            <NavCurrencyDropdown
               open={isLangDropdownOpen}
               setOpen={setIsLangDropdownOpen}
             />

@@ -22,6 +22,9 @@ export const NavThemeSwitch = () => {
           setMode("light");
         }
       }}
+      sx={{
+        display: { xs: "none", sm: "none", md: "flex" },
+      }}
     />
   );
 };

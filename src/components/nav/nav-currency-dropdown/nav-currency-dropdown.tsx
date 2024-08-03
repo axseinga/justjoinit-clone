@@ -3,10 +3,10 @@
 import * as React from "react";
 import { Box, Typography, ListItem } from "@mui/material";
 import {
-  NavLangDropdownCurrencyList,
-  NavLangDropdownCurrencyListButton,
-  NavLangDropdownWrapper,
-} from "@/components/nav/nav-lang-dropdown/nav-lang-dropdown.styles";
+  NavCurrencyDropdownCurrencyList,
+  NavCurrencyDropdownCurrencyListButton,
+  NavCurrencyDropdownWrapper,
+} from "@/components/nav/nav-currency-dropdown/nav-currency-dropdown.styles";
 import { NavTitle } from "@/components/nav/nav.styles";
 import { currenciesLists } from "@/components/nav/content";
 import { PopperWrapper } from "@/components/popper-wrapper/popper-wrapper";
@@ -17,12 +17,12 @@ type CurrencyT = {
   value: string;
 };
 
-type NavLangDropdownProps = {
+type NavCurrencyDropdownProps = {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
   open: boolean;
 };
 
-export const NavLangDropdown = ({ setOpen, open }: NavLangDropdownProps) => {
+export const NavCurrencyDropdown = ({ setOpen, open }: NavCurrencyDropdownProps) => {
   const theme: Theme = useTheme();
 
   const [selectedCurrency, setSelectedCurrency] = React.useState<CurrencyT>({
@@ -40,6 +40,7 @@ export const NavLangDropdown = ({ setOpen, open }: NavLangDropdownProps) => {
       open={open}
       setOpen={setOpen}
       buttonStyle={{
+        display: { xs: "none", sm: "none", md: "flex" },
         borderRadius: "50%",
         padding: "5px",
         minWidth: "40px",
@@ -61,7 +62,7 @@ export const NavLangDropdown = ({ setOpen, open }: NavLangDropdownProps) => {
       }
       popperPlacement="bottom"
     >
-      <NavLangDropdownWrapper>
+      <NavCurrencyDropdownWrapper>
         <Box
           sx={{
             display: "flex",
@@ -77,9 +78,9 @@ export const NavLangDropdown = ({ setOpen, open }: NavLangDropdownProps) => {
           >
             Select your currency
           </Typography>
-          <NavLangDropdownCurrencyList>
+          <NavCurrencyDropdownCurrencyList>
             {currenciesLists.map((currency) => (
-              <NavLangDropdownCurrencyListButton
+              <NavCurrencyDropdownCurrencyListButton
                 key={currency.value}
                 onClick={() => handleCurrencySelect(currency)}
               >
@@ -91,11 +92,11 @@ export const NavLangDropdown = ({ setOpen, open }: NavLangDropdownProps) => {
                     {currency.label}
                   </Typography>
                 </ListItem>
-              </NavLangDropdownCurrencyListButton>
+              </NavCurrencyDropdownCurrencyListButton>
             ))}
-          </NavLangDropdownCurrencyList>
+          </NavCurrencyDropdownCurrencyList>
         </Box>
-      </NavLangDropdownWrapper>
+      </NavCurrencyDropdownWrapper>
     </PopperWrapper>
   );
 };

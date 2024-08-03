@@ -8,7 +8,7 @@ import {
   ListProps,
 } from "@mui/material";
 
-export const NavLangDropdownWrapper = styled(Box)<BoxProps>(({ theme }) => ({
+export const NavCurrencyDropdownWrapper = styled(Box)<BoxProps>(({ theme }) => ({
     border: "1px solid",
     borderColor: theme.palette.borderColor,
     backgroundColor: theme.palette.primary.main,
@@ -24,14 +24,14 @@ export const NavLangDropdownWrapper = styled(Box)<BoxProps>(({ theme }) => ({
       "rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px",
   }));
   
-  export const NavLangDropdownCurrencyList = styled(List)<ListProps>(() => ({
+  export const NavCurrencyDropdownCurrencyList = styled(List)<ListProps>(() => ({
     width: "100%",
     display: "flex",
     flexDirection: "column",
     gap: "2px",
   }));
   
-  export const NavLangDropdownCurrencyListButton = styled(Box)<BoxProps>(
+  export const NavCurrencyDropdownCurrencyListButton = styled(Box)<BoxProps>(
     ({ theme }) => ({
       width: "100%",
       borderRadius: "13px",
