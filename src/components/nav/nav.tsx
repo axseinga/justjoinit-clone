@@ -30,7 +30,7 @@ export const Nav = () => {
     <NavPaper component="header" elevation={1}>
       <Box sx={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
         <Box sx={{ position: "relative", width: 119, height: 24 }}>
-          <Logo color={theme.palette.logo}/>
+          <Logo/>
         </Box>
         <NavTitle>#1 Job Board for tech industry in Europe</NavTitle>
         <NavThemeSwitch />
@@ -46,7 +46,7 @@ export const Nav = () => {
                   width: "max-content",
                 }}
               >
-                <a href={href}>
+                <Link href={href}>
                   <NavText
                     sx={{
                       padding: "8px 14px",
@@ -58,16 +58,13 @@ export const Nav = () => {
                   >
                     {label}
                   </NavText>
-                </a>
+                </Link>
               </ListItem>
             ))}
           </List>
           <NavPostAJobButton
             href="/pricing"
-            LinkComponent={Link}
-            size="small"
-            variant="outlined"
-            disableElevation
+            component={Link}
           >
             Post a job
           </NavPostAJobButton>

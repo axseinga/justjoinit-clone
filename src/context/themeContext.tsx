@@ -47,7 +47,7 @@ export const ThemeContextProvider = ({
             primary: { main: "#2C2C2C", dark: "#111111" },
             text: {
               primary: "#bcbcbc",
-              secondary: "#bcbcbc",
+              secondary: "#dddddd",
             },
             buttonHover: "#505050",
             buttonHoverPink: "#4f3940",
@@ -59,7 +59,7 @@ export const ThemeContextProvider = ({
             primary: { main: "#FFFFFF", dark: "#f3f6f8" },
             text: {
               primary: "#757575",
-              secondary: "#000000",
+              secondary: "#1d1e25",
             },
             buttonHover: "#f3f6f8",
             buttonHoverPink: "#FEF8FB",

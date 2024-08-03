@@ -13,17 +13,21 @@ import {
   BoxProps,
   Switch,
   SwitchProps,
+  Link,
+  LinkProps,
 } from "@mui/material";
 
 export const NavPaper = styled(Paper)<PaperProps>(({ theme }) => ({
   width: "100cqw",
   paddingInline: "24px",
+  borderRadius: 0,
   height: "64px",
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
   color: theme.palette.text.primary,
   backgroundColor: theme.palette.primary.main,
+  backgroundImage: "none"
 }));
 
 export const NavTitle = styled(Typography)<TypographyProps>(() => ({
@@ -41,7 +45,12 @@ export const NavText = styled(Typography)<TypographyProps>(() => ({
   display: "flex",
 }));
 
-export const NavPostAJobButton = styled(Button)<ButtonProps>(({ theme }) => ({
+export const NavPostAJobButton = styled(Link)<LinkProps>(({ theme }) => ({
+  fontFamily: openSans.style.fontFamily,
+  fontWeight: "500",
+  fontSize: "0.8125rem",
+  lineHeight: "1.75",
+  border: "1px solid",
   borderColor: theme.palette.buttonHollow,
   borderRadius: "24px",
   color: theme.palette.text.secondary,
@@ -49,6 +58,7 @@ export const NavPostAJobButton = styled(Button)<ButtonProps>(({ theme }) => ({
   height: "max-content",
   padding: "10px 16px",
   "&:hover": {
+    textDecoration: "none",
     border: "1px solid",
     borderColor: theme.palette.text.secondary,
   },
