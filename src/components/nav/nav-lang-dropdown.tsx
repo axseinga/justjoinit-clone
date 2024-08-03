@@ -10,6 +10,7 @@ import {
 } from "./nav.styles";
 import { currenciesLists } from "./content";
 import { PopperWrapper } from "@/components/popper-wrapper/popper-wrapper";
+import { Theme, useTheme } from "@mui/material/styles";
 
 type CurrencyT = {
   label: string;
@@ -22,6 +23,8 @@ type NavLangDropdownProps = {
 };
 
 export const NavLangDropdown = ({ setOpen, open }: NavLangDropdownProps) => {
+  const theme: Theme = useTheme();
+
   const [currency, setCurrency] = React.useState<CurrencyT>({
     label: "PLN",
     value: "pln",
@@ -44,12 +47,12 @@ export const NavLangDropdown = ({ setOpen, open }: NavLangDropdownProps) => {
         height: "40px",
         backgroundColor: "transparent",
         "&:hover": {
-          backgroundColor: "#f3f6f8",
+          backgroundColor: theme.palette.buttonHover,
         },
       }}
       buttonLabel={
         <NavTitle
-          color="#000000"
+          color={theme.palette.text.secondary}
           component="p"
           sx={{ fontSize: "11px", fontWeight: "600" }}
         >
@@ -69,7 +72,7 @@ export const NavLangDropdown = ({ setOpen, open }: NavLangDropdownProps) => {
           <Typography
             variant="h6"
             component="h3"
-            color="#000000"
+            color={theme.palette.text.secondary}
             paddingX="12px"
           >
             Select your currency
@@ -81,7 +84,7 @@ export const NavLangDropdown = ({ setOpen, open }: NavLangDropdownProps) => {
                 onClick={() => handleCurrencySelect(currency)}
               >
                 <ListItem sx={{ padding: 0 }}>
-                  <Typography variant="body1" color="#757575">
+                  <Typography variant="body1" color={theme.palette.text.primary}>
                     {currency.label}
                   </Typography>
                 </ListItem>

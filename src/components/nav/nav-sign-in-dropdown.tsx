@@ -18,6 +18,7 @@ import {
   NavSignInDropdownListItemLinks,
   NavSignInDropdownWrapper,
 } from "@/components/nav/nav.styles";
+import { Theme, useTheme } from "@mui/material/styles";
 
 type NavSignInDropdownProps = {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -28,6 +29,7 @@ export const NavSignInDropdown = ({
   open,
   setOpen,
 }: NavSignInDropdownProps) => {
+  const theme: Theme = useTheme();
   return (
     <PopperWrapper
       open={open}
@@ -73,7 +75,7 @@ export const NavSignInDropdown = ({
                       sx={{
                         "&:hover": {
                           "& #listLink": {
-                            backgroundColor: "#f3f6f8",
+                            backgroundColor: theme.palette.buttonHover,
                             borderRadius: "10px",
                           },
                         },

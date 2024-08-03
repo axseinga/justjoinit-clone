@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Box, Switch, List, ListItem, Button } from "@mui/material";
+import { Box, List, ListItem, Button } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -17,8 +17,11 @@ import {
   NavBoxCenter,
   NavSavedIcon,
 } from "@/components/nav/nav.styles";
+import { NavThemeSwitch } from "./nav-theme-switch";
+import { Theme, useTheme } from "@mui/material/styles";
 
 export const Nav = () => {
+  const theme: Theme = useTheme();
   const [isSignInDropdownOpen, setIsSignInDropdownOpen] = React.useState(false);
   const [isLangDropdownOpen, setIsLangDropdownOpen] = React.useState(false);
 
@@ -34,7 +37,7 @@ export const Nav = () => {
           />
         </Box>
         <NavTitle>#1 Job Board for tech industry in Europe</NavTitle>
-        <Switch />
+        <NavThemeSwitch />
       </Box>
       <NavBoxCenter>
         <NavBoxCenter>
@@ -53,7 +56,7 @@ export const Nav = () => {
                       padding: "8px 14px",
                       borderRadius: "8px",
                       "&:hover": {
-                        backgroundColor: "#E4E8F0",
+                        backgroundColor: theme.palette.buttonHover,
                       },
                     }}
                   >
