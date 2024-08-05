@@ -15,9 +15,9 @@ import { openSans } from "@/styles/fonts";
 
 export const JobListWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   backgroundColor: theme.palette.greyBackground,
-  marginTop: "65px",
   display: "flex",
   color: theme.palette.text.primary,
+  marginTop: "130px",
 }));
 
 export const JobListTitle = styled(Typography)<TypographyProps>(
@@ -160,7 +160,7 @@ export const JobListItemTechLabel = styled(Box)<BoxProps>(({ theme }) => ({
 export const JobListFooterWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   backgroundColor: "#E4E8F0",
   borderRadius: "10px",
-  height: "80px",
+  height: "70px",
   width: "97%",
   marginInline: "auto",
   padding: "0.5rem 2rem",
@@ -168,13 +168,14 @@ export const JobListFooterWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
+  marginTop: "0.5rem"
 }));
 
 export const JobListFooterContent = styled(Box)<BoxProps>(({ theme }) => ({
   display: "flex",
   gap: "0.5rem",
   alignItems: "center",
-  maxWidth: "45rem"
+  maxWidth: "40rem"
 }));
 
 export const JobListFooterButton = styled(Button)<ButtonProps>(({ theme }) => ({

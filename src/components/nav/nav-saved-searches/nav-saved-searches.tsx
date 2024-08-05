@@ -73,7 +73,7 @@ export const NavSavedSearches = ({ open, setOpen }: NavSeavedSearchesProps) => {
           </Box>
           <img src="/assets/searches-duck.svg" alt="" />
           <NavSavedSearchesTitle>
-            You haven't saved your search criteria yet
+            You haven&apos;t saved your search criteria yet
           </NavSavedSearchesTitle>
           <Typography
             variant="body2"
@@ -82,7 +82,7 @@ export const NavSavedSearches = ({ open, setOpen }: NavSeavedSearchesProps) => {
             paddingX="12px"
           >
             Filter the portal with your most wanted filters and add them to your
-            saved searches via the "Subscribe" button.
+            saved searches via the &quot;Subscribe&quot; button.
           </Typography>
         </NavSavedSearchesContent>
       </NavSavedSearchesWrapper>

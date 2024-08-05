@@ -30,8 +30,6 @@ import {
   JobListTitle,
   JobListWrapper,
 } from "./job-list.styles";
-import { NavPostAJobButton } from "../nav/nav.styles";
-import Link from "next/link";
 
 export const JobsList = () => {
   return (
@@ -42,7 +40,7 @@ export const JobsList = () => {
         </JobListTitle>
         <Virtuoso
           style={{
-            height: "90vh",
+            height: "95vh",
             width: "60vw",
           }}
           components={{ Footer: JobListFooter }}
@@ -196,7 +194,7 @@ const JobListFooter = () => {
     <JobListFooterWrapper>
       <JobListFooterContent>
         <NotificationsNoneRoundedIcon />
-        <Typography variant="body1" component="p" fontWeight={500}>
+        <Typography variant="body2" component="p" fontWeight={500}>
           Add an e-mail notification, and we will inform you about new job
           offers according to the given criteria.
         </Typography>
