@@ -27,7 +27,10 @@ export const NavPaper = styled(Paper)<PaperProps>(({ theme }) => ({
   justifyContent: "space-between",
   color: theme.palette.text.primary,
   backgroundColor: theme.palette.primary.main,
-  backgroundImage: "none"
+  backgroundImage: "none",
+  position: "fixed",
+  top: 0,
+  zIndex: 50,
 }));
 
 export const NavTitle = styled(Typography)<TypographyProps>(() => ({

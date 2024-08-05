@@ -17,7 +17,6 @@ import {
 
 export const FooterWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
-  padding: "40px 24px",
   display: "flex",
   alignItems: "center",
 }));
@@ -30,7 +29,7 @@ export const FooterInner = styled(Box)<BoxProps>(({ theme }) => ({
   display: "flex",
   justifyContent: "space-between",
   gap: "1rem",
-  padding: "40px 24px 40px 24px",
+  padding: "40px 24px 30px 24px",
 }));
 
 export const FooterListTitle = styled(Typography)<TypographyProps>(

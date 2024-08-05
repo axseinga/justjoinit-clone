@@ -91,7 +91,10 @@ export const Footer = () => {
             </FooterListTitle>
             <List>
               {footerColumn.links.map((link, linkIndex) => (
-                <ListItem sx={{ paddingLeft: 0 }}>
+                <ListItem
+                  sx={{ paddingLeft: 0 }}
+                  key={`${index}_${link.label}`}
+                >
                   <FooterLink
                     component={NextLink}
                     href={link.href}

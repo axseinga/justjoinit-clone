@@ -11,6 +11,7 @@ interface CustomPalettes {
   buttonHollow: string;
   borderColor: string;
   logo: string;
+  greyBackground: string;
 }
 declare module "@mui/material/styles" {
   interface PaletteOptions extends CustomPalettes {}
@@ -44,16 +45,17 @@ export const ThemeContextProvider = ({
       mode: mode,
       ...(mode === "dark"
         ? {
-            primary: { main: "#2C2C2C", dark: "#111111" },
+            primary: { main: "#2C2C2C", dark: "#111111",  },
             text: {
               primary: "#bcbcbc",
               secondary: "#dddddd",
             },
-            buttonHover: "#505050",
+            buttonHover: "#111111",
             buttonHoverPink: "#4f3940",
             buttonHollow: "#505050",
             borderColor: "#505050",
-            logo: "#f3f6f8"
+            logo: "#f3f6f8",
+            greyBackground: "#1D1E25"
           }
         : {
             primary: { main: "#FFFFFF", dark: "#f3f6f8" },
@@ -65,7 +67,9 @@ export const ThemeContextProvider = ({
             buttonHoverPink: "#FEF8FB",
             buttonHollow: "#eaeaea",
             borderColor: "#f3f6f8",
-            logo: "#1D1E25"
+            logo: "#1D1E25",
+            greyBackground: "#f3f6f8"
+
           }),
     },
   });
